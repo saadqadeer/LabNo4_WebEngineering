@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Graph
+	</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+
+<style type="text/css">
+	.mydiv{
+		position: relative;
+		left: 49px;
+		top:22px;
+	}
+
+	.cf  {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+</style>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+
+	 var arr=new Array();
+	var i=1;
+	function clickme(){
+		var theDiv = document.getElementById("demo");
+		var con=document.getElementById("vertix").value;
+		var content = document.createTextNode(i);
+		//for vertics
+
+
+		//for edges
+		var ed=document.getElementById("col-md-6");
+		var from=document.getElementById("from").value;
+		var to=document.getElementById("to").value;
+		var value=document.getElementById("value").value;
+		var content = document.createTextNode(i+". Vertex "+" Value=> " +con +"Edge From "+from+"Edge To " +to +"Value of Edge "+value);
+
+		//document.write("\n");
+		theDiv.appendChild(content);
+		arr[i]=con;
+		i++;
+	return false;
+}
+
+
+$(document).ready(function(){
+    
+    $(document).on('click','#demo',function(){
+    $(this).fadeOut('slow');
+    })
+});
+
+
+	</script>
+
+</head>
+<body>
+<div class="container">
+<h1 class="header">Interactive Graph </h1>
+<div class="col-md-6">
+<form class="form-group" action="" onsubmit="return clickme()">
+<label>Vertices</label>
+<input class="form-control" type="text" id="vertix" placeholder="Vertices">
+<br>
+<label>Edge From</label>
+<input class="form-control" type="text" id="from" placeholder="From __">
+<br>
+<label>Edge To</label>
+<input class="form-control" type="text" id="to" placeholder="TO __">
+<br>
+<label>Edge Value</label>
+<input class="form-control" type="text" id="value" placeholder="Value">
+<br>
+<button class="btn btn-info">Submit</button>
+</form>
+<div id="demo" class="mydiv">
+</div>
+
+<div class="col-md-6">
+
+</div>
+</div>
+</div>
+</body>
+</html>
